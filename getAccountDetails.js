@@ -5,9 +5,9 @@ async function getAccountDetails(pair) {
         const server = new DiamSdk.Horizon.Server("https://diamtestnet.diamcircle.io/")
 
         const account = await server.loadAccount(pair.publicKey())
-        console.log("Balances for account: " + pair.publicKey())
+        // console.log("Balances for account: " + pair.publicKey())
         account.balances.forEach(balance => {
-            console.log("Type: ", balance.asset_type, ", Balance: ", balance.balance)
+            // console.log("Type: ", balance.asset_type, ", Balance: ", balance.balance)
         });
         return account
     } catch (error) {

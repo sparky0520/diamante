@@ -1,7 +1,7 @@
 import DiamSdk from 'diamante-sdk-js'
 
 // Accept both keys of source and publicKey() of destination
-async function makePayment(sourceKeys, destinationId) {
+function makePayment(sourceKeys, destinationId, amount) {
     var server = new DiamSdk.Horizon.Server("https://diamtestnet.diamcircle.io")
 
     var transaction;
@@ -36,7 +36,7 @@ async function makePayment(sourceKeys, destinationId) {
                         // Diamante accepts payments in many currency
                         // native() stands represents Lumens.
                         asset: DiamSdk.Asset.native(),
-                        amount: '1',
+                        amount: amount,
                     })
                 )
                 .setTimeout(180)

@@ -2,6 +2,7 @@ import DiamSdk from 'diamante-sdk-js'
 import createChildAccount from './createChildAccount.js'
 import getAccountDetails from './getAccountDetails.js'
 import makePayment from './makePayment.js'
+import paymentHistory from './paymentHistory.js'
 
 const pair = DiamSdk.Keypair.random()
 
@@ -22,6 +23,8 @@ const child1 = await createChildAccount(pair)   // returns child1 keypairs
 // Making another child account
 const child2 = await createChildAccount(pair)
 
-// Making transaction from child1 to child2 (1 Diam)
-makePayment(child1,child2.publicKey())
+// Initialising stream to check for payments to child2
+paymentHistory(child2.publicKey())
 
+// Making transaction from child1 to child2 (1 Diam)
+makePayment(child1,child2.publicKey(),'2')

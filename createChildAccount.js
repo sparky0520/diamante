@@ -8,7 +8,7 @@ async function createChildAccount(pair) {
             )}`
         );
         const responseJSON = await response.json();
-        console.log("SUCCESS! You have a new account :)\n");//, responseJSON);
+        console.log("SUCCESS! You have a new parent account :)\n");//, responseJSON);
     } catch (e) {
         console.error("ERROR!", e);
     }
@@ -32,6 +32,8 @@ async function createChildAccount(pair) {
                     startingBalance: "5",
                 })
             )
+            // Wait maximum 3 minutes for the transaction
+            // then cancel it
             .setTimeout(180)
             .build();
         //sign the transaction with the account that was created from friendbot.

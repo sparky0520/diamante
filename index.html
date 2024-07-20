@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; margin-bottom: 4rem;">
+        <div style="width: 50%;">
+            <h2>child1 Balance: </h2>
+            <h5 id="child1"></h5>
+        </div>
+        <div style="width: 50%;">
+            <h2>child2 Balance: </h2>
+            <h5 id="child2"></h5>
+        </div>
+    </div>
+    <form id="formOne2Two">
+        <label for="one2two">Transfer from child1 to child2</label>
+        <input type="number" id="one2two" name="one2two"></input>
+        <button type="submit">Submit</button>
+    </form>
+    <form id="formTwo2One">
+        <label for="two2one">Transfer from child2 to child1</label>
+        <input type="number" id="two2one" name="two2one"></input>
+        <button type="submit">Submit</button>
+    </form>
+    <div style="margin-bottom: 4rem;">
+        <h3>Command Prompt: </h3>
+        <h5 id="cmd"></h5>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
