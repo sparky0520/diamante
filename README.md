@@ -1,0 +1,2 @@
+# diamante
+ Diamante blockchain functions
